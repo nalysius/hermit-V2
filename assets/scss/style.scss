@@ -1031,18 +1031,13 @@ a.footnote-ref {
   line-height: $home-subtitle-line-height;
   font-size: $home-subtitle-font-size;
   font-style: italic;
-  opacity: $home-subtitle-opacity;
-  display: inline-block;               // make container block-level for predictable centering
+  opacity: .9;
+  word-wrap: break-word;
   text-align: center;
-  position: relative;
-  max-width: $home-subtitle-max-width;              // keep readable measure similar to desktop
-  margin-left: auto;
-  margin-right: auto;
-
-  /* reliable wrapping rules */
-  white-space: pre-wrap;        // preserve multiple spaces but allow wrapping
-  overflow-wrap: anywhere;      // breaks long words if needed
-  hyphens: auto;
+  white-space: pre-wrap;
+  
+  // Reserve minimum height based on maximum expected content to prevent layout shift
+  min-height: calc(#{$line-height} * #{$max-lines-desktop} * 1em);
 }
 
 
