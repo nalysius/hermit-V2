@@ -1,6 +1,5 @@
-<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 {{- if (or (in .Page.RelPermalink "404") (or .Site.Params.siteNoIndex .Params.noIndex) (in .Site.Params.noIndexPages .Title)) -}}
 <meta name="robots" content="{{ .Site.Params.denyRobots | default "noindex, nofollow, noarchive" }}">
@@ -17,9 +16,9 @@
 {{- with resources.Get $favicon | minify -}}<link rel="icon" href="{{ .Permalink }}" type="image/svg+xml">{{- end -}}
 {{- else if (fileExists "static/favicon.svg") -}}<link rel="icon" href="{{"favicon.svg" | relURL}}" type="image/svg+xml">
 {{- end -}}
-<link rel="icon" type="image/png" sizes="96x96" href="{{"favicon-96x96.png" | relURL}}" />
+<link rel="icon" type="image/png" sizes="96x96" href="{{"favicon-96x96.png" | relURL}}" >
 <link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" >
 {{ with $themeColor := .Site.Params.themeColor | default "#494f5c" -}}
 <meta name="theme-color" content="{{.}}">
 <meta name="msapplication-TileColor" content="{{.}}">
